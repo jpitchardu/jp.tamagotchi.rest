@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using jp.tamagotchi.rest.ViewModels;
 
 using Microsoft.AspNetCore.Mvc;
@@ -11,25 +12,39 @@ namespace jp.tamagotchi.rest.Controllers
         [HttpGet("/{id}")]
         public IActionResult GetSingle(int id)
         {
-            return Ok();
+            var response = new Response<Transaction>();
+
+            return Ok(response);
         }
 
         [HttpGet]
         public IActionResult GetMultiple()
         {
-            return Ok();
+            var response = new Response<List<Transaction>>();
+
+            return Ok(response);
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] Transaction Transaction)
+        public IActionResult Create([FromBody] Transaction transaction)
         {
-            return Created($"api/Transactions/{Transaction.Id}", Transaction);
+            var response = new Response<Transaction>()
+            {
+                Data = transaction
+            };
+
+            return Created($"api/Transactions/{transaction.Id}", response);
         }
 
         [HttpPut("/{id}")]
-        public IActionResult Update(int id, [FromBody] Transaction Transaction)
+        public IActionResult Update(int id, [FromBody] Transaction transaction)
         {
-            return Ok(Transaction);
+            var response = new Response<Transaction>()
+            {
+                Data = transaction
+            };
+
+            return Ok(response);
         }
 
         [HttpDelete("/{id}")]
