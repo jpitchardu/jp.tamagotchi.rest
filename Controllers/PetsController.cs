@@ -15,6 +15,8 @@ namespace jp.tamagotchi.rest.Controllers
         {
             var result = new Response<Pet>();
 
+            
+
             return Ok(result);
         }
 

@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "Google.Protobuf/3.5.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/Google.Protobuf.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Google.Protobuf.dll": {}
+        }
+      },
       "Grpc/1.11.0": {
         "type": "package",
         "dependencies": {
@@ -4812,6 +4824,19 @@
     }
   },
   "libraries": {
+    "Google.Protobuf/3.5.1": {
+      "sha512": "f2k1VNaB9bfvEsvARzzEL1TZiIpL33KKK3JMH7UANlPlJVptuvsk4qpBZEnz0pORWZOdUHlVwMQuUzFqjJYCxA==",
+      "type": "package",
+      "path": "google.protobuf/3.5.1",
+      "files": [
+        "google.protobuf.3.5.1.nupkg.sha512",
+        "google.protobuf.nuspec",
+        "lib/net45/Google.Protobuf.dll",
+        "lib/net45/Google.Protobuf.xml",
+        "lib/netstandard1.0/Google.Protobuf.dll",
+        "lib/netstandard1.0/Google.Protobuf.xml"
+      ]
+    },
     "Grpc/1.11.0": {
       "sha512": "9ytohnTwRih5l6+cMMdVl2AzDNwyaxYV6eMCIuoaA2t2sYtepiPvTFVdHIPwOtbxMdOe5XHWHbQNYh2mlca0eg==",
       "type": "package",
@@ -12647,7 +12672,8 @@
     ".NETCoreApp,Version=v2.0": [
       "Grpc >= 1.11.0",
       "Microsoft.AspNetCore.All >= 2.0.0",
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "google.protobuf >= 3.5.1"
     ]
   },
   "packageFolders": {
@@ -12697,6 +12723,10 @@
             "target": "Package",
             "version": "[2.0.0, )",
             "autoReferenced": true
+          },
+          "google.protobuf": {
+            "target": "Package",
+            "version": "[3.5.1, )"
           }
         },
         "imports": [
